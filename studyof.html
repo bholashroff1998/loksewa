@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Knowledge Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Interactive Knowledge Quiz</h1>
+            <p class="subtitle">Challenge yourself and expand your horizons</p>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">Question 1 of 45</div>
+        </div>
+
+        <div class="quiz-card" id="quizCard">
+            <div class="question-header">
+                <div class="question-badge">
+                    <span class="question-number" id="questionNumber">01</span>
+                    <span class="total-questions">/ 45</span>
+                </div>
+                <div class="score-badge">
+                    <span class="score-label">Score:</span>
+                    <span class="score-value" id="currentScore">0</span>
+                </div>
+            </div>
+
+            <div class="question-text" id="questionText"></div>
+
+            <div class="options" id="optionsContainer"></div>
+
+            <div class="button-group">
+                <button class="btn btn-next" id="nextBtn" disabled>
+                    <span>Next Question</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-card results hidden" id="resultsCard">
+            <div class="results-content">
+                <div class="emoji" id="resultEmoji">🎉</div>
+                <h2>Quiz Complete!</h2>
+                <div class="final-score-container">
+                    <div class="final-score" id="finalScore">0/45</div>
+                    <div class="percentage" id="percentage">0%</div>
+                </div>
+                <div class="performance" id="performance"></div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="correctAnswers">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="incorrectAnswers">0</div>
+                        <div class="stat-label">Incorrect</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="accuracy">0%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                </div>
+
+                <button class="btn btn-restart" onclick="restartQuiz()">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10C17.5 14.1421 14.1421 17.5 10 17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M5 17.5L2.5 15L5 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Take Quiz Again</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="studyof.js"></script>
+</body>
+</html>
